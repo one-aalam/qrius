@@ -1,0 +1,12 @@
+{
+  "siteName": "Y",
+  "seo": {
+    "title": "Qrius - News, views and stuff making a difference...",
+    "description": "HN Clone",
+    "openGraph": {
+      "type": "website",
+      "locale": "en_IE",
+      "site_name": "Y"
+    }
+  }
+}
