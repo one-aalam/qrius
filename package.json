@@ -32,6 +32,8 @@
     "husky": "^4.2.3",
     "identity-obj-proxy": "^3.0.0",
     "jest": "^25.2.7",
+    "lint-staged": "^10.1.2",
+    "prettier": "^2.0.2",
     "react-test-renderer": "^16.13.1",
     "tslint": "^6.1.1",
     "tslint-config-airbnb": "^5.11.2",
@@ -40,7 +42,20 @@
   },
   "husky": {
     "hooks": {
-      "pre-commit": "npm run tslint"
+      "pre-commit": "lint-staged"
     }
+  },
+  "lint-staged": {
+    "*.+(ts|tsx)": [
+      "prettier --write",
+      "git add",
+      "jest --findRelatedTests",
+      "tslint"
+    ]
+  },
+  "prettier": {
+    "singleQuote": true,
+    "trailingComma": "es5",
+    "printWidth": 120
   }
 }

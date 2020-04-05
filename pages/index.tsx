@@ -5,9 +5,7 @@ import Layout from '../components/layout';
 
 export default () => (
   <Layout>
-      <h1 className="title">{SITE_CONFIG.siteName}</h1>
-      <p className="description">
-        {SITE_CONFIG.seo.description}
-      </p>
+    <h1 className="title">{SITE_CONFIG.siteName}</h1>
+    <p className="description">{SITE_CONFIG.seo.description}</p>
   </Layout>
 );

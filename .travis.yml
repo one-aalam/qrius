@@ -1,10 +1,11 @@
 language: node_js
 node_js:
-- 10.16.1
+  - 10.16.1
 cache:
-    directories:
+  directories:
     - node_modules
 script:
-- yarn
-- yarn tslint
-- yarn build
+  - yarn
+  - yarn tslint
+  - yarn test:ci
+  - yarn build
