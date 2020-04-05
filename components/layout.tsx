@@ -1,7 +1,13 @@
+import * as React from 'react';
 import Head from 'next/head';
 import * as SITE_CONFIG from '../public/site.config.json';
 
-export default ({ children, title = SITE_CONFIG.seo.title }) => (
+
+type Props = {
+  title?: string
+}
+
+const Layout: React.FC<Props> = ({ children, title = SITE_CONFIG.seo.title }) => (
   <div>
     <Head>
       <title>{title}</title>
@@ -11,3 +17,5 @@ export default ({ children, title = SITE_CONFIG.seo.title }) => (
     {children}
   </div>
 )
+
+export default Layout
