@@ -2,10 +2,9 @@ import * as React from 'react';
 import Head from 'next/head';
 import * as SITE_CONFIG from '../public/site.config.json';
 
-
 type Props = {
-  title?: string
-}
+  title?: string;
+};
 
 const Layout: React.FC<Props> = ({ children, title = SITE_CONFIG.seo.title }) => (
   <div>
@@ -16,6 +15,6 @@ const Layout: React.FC<Props> = ({ children, title = SITE_CONFIG.seo.title }) =>
     </Head>
     {children}
   </div>
-)
+);
 
-export default Layout
+export default Layout;

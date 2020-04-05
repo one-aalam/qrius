@@ -10,4 +10,4 @@ export default () => (
         {SITE_CONFIG.seo.description}
       </p>
   </Layout>
-)
+);
