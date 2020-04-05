@@ -1,11 +1,12 @@
 {
   "name": "qrius",
-  "version": "0.1.0",
+  "version": "1.0.0",
   "private": true,
   "scripts": {
     "dev": "next dev",
     "build": "next build",
-    "start": "next start"
+    "start": "next start",
+    "version": "auto-changelog -p && git add CHANGELOG.md"
   },
   "dependencies": {
     "classnames": "^2.2.6",
@@ -14,5 +15,8 @@
     "next": "9.3.4",
     "react": "16.13.1",
     "react-dom": "16.13.1"
+  },
+  "devDependencies": {
+    "auto-changelog": "^1.16.4"
   }
 }
