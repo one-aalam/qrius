@@ -1,3 +1,12 @@
+# [1.2.0](https://github.com/one-aalam/qrius/compare/v1.1.0...v1.2.0) (2020-04-06)
+
+
+### Bug Fixes
+
+* Issue with missing dependencies and scripts in package.json ([542e699](https://github.com/one-aalam/qrius/commit/542e699686150d05ab638492ee35a77859e59829))
+
+
+
 # [1.1.0](https://github.com/one-aalam/qrius/compare/1.0.1...v1.1.0) (2020-04-05)
 
 ### Features
