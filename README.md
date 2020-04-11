@@ -3,8 +3,6 @@
 ## Recommended workflow for releases
 
 1. Make changes
-2. 
-
 1. Commit/Merge those changes
 1. Make sure Travis turns green
 1. Bump version in `package.json` (run `yarn version`)
