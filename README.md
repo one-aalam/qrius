@@ -1,4 +1,6 @@
-# qrius
+  # qrius
+  
+Developed entirely on ONE+6 using spck editor(Android) and natively installed NodeJs runtime and Git client
 
 ## Recommended workflow for releases
 
