@@ -2,6 +2,7 @@ import React from 'react';
 import cx from 'classnames';
 import TimeAgo from 'javascript-time-ago';
 import en from 'javascript-time-ago/locale/en';
+import { domainamify } from '../lib';
 
 import styles from './utility.module.css';
 import mstyle from './NewsItem.module.css';
@@ -83,9 +84,7 @@ const NewsItem: React.FC<Props> = ({
           {/* NewsItem: Source */}
           <div className="NewsItem__source">
             <span className={styles.tcSilverLight}>&#40;</span>
-            <span className={styles.tcGray}>
-              {source.indexOf('://') !== -1 ? source.split('://')[1].split('/')[0] : source}
-            </span>
+            <span className={styles.tcGray}>{domainamify(source)}</span>
             <span className={styles.tcSilverLight}>&#41;</span>
           </div>
 
