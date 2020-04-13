@@ -1,8 +1,8 @@
 import React from 'react';
 import renderer from 'react-test-renderer';
-import Index from '../pages/index';
+import Footer from '../components/Footer';
 
-it('renders homepage unchanged', () => {
-  const tree = renderer.create(<Index />).toJSON();
+it('renders footer', () => {
+  const tree = renderer.create(<Footer />).toJSON();
   expect(tree).toMatchSnapshot();
 });
