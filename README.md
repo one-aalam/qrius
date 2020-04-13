@@ -1,6 +1,8 @@
-  # qrius
-  
-Developed entirely on ONE+6 using spck editor(Android) and natively installed NodeJs runtime and Git client
+# qrius
+A very minimal HackerNews clone, built outta qriusity https://qrius.one-aalam.now.sh/
+
+## Details
+Built using NextJS for allowing SSR with very manageable constructs and decent Lighthouse score out of the box. State is managed using React Hooks (defaults + custom)
 
 ## Recommended workflow for releases
  
