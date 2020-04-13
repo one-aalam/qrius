@@ -1,0 +1,15 @@
+.NewsItem {
+    padding: 2px 8px;
+}
+.NewsItem__NumCol {
+    width: 80px;
+    text-align: right;
+}
+@media screen and (min-width: 768px) {
+    .NewsItem {
+        padding: 4px 12px;
+    }
+    .NewsItem__NumCol {
+        width: 100px;
+    }
+}

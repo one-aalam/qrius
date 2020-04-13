@@ -1,0 +1,49 @@
+/** Utility classes **/
+.flex { display: flex;}
+.flexR { display: flex; flex-direction: column;}
+@media screen and (min-width: 768px) {
+    .flexR {
+        flex-direction: row;
+    }
+}
+
+.unstyled { outline: 0; border: 0; background: none;}
+
+.fs12 { font-size: 12px;}
+.fs14 { font-size: 14px;}
+
+.px4 { padding-left: 4px; padding-right: 4px;}
+
+.fw500 { font-weight: 500 }
+.fw600 { font-weight: 600 }
+
+.bgCararra { background-color: #e6e6df;}
+.bgSpringWood { background-color: #f6f6ef;}
+.bgBlazeOrange { background-color: #ff6602;}
+
+.tcBlazeOrange { color: #ff6602; }
+.tcFire { color: #aa4400; }
+.tcBlack { color: #000000; }
+.tcGray { color: #828282; }
+.tcDustyGray { color: #999999; }
+.tcStack { color: #8d8f8c }
+.tcSilverLight { color: #c9c9c9; }
+.tcSilverDark { color: #b8b8b8; }
+
+/**
+- Primary: #ff6602 // blaze-orange
+- White: #ffffff
+- Black: #000000
+
+- Bg, row-normal: #f6f6ef // spring-wood
+- news row-alt: #e6e6df // cararra
+- news upvote: #999999 // dusty-gray
+
+- news source: #828282  // gray
+- news source bracket: #c9c9c9 // silver-light
+
+- news source by: #b8b8b8 // silver-dark
+- news source time ago: #828282 // gray
+- news hide bracket: #8d8f8c // stack
+
+- #aa4400 (above 80) **/
