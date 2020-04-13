@@ -1,44 +1,49 @@
-/* eslint-disable no-console */
 import React from 'react';
-import useBrowserState from '../lib/hooks/useBrowserState';
 import { INewsItem } from '../interfaces/hn';
+import BrowserStateNewsContext from '../lib/contexts/BrowserStateNewsContext';
 
 import NewsItem from './NewsItem';
 
 type Props = {
   items: INewsItem[];
+  cacheUpvotes?: boolean;
+  cacheHidden?: boolean;
+  showCachedHidden?: boolean;
+  showCachedPoints?: boolean;
 };
 
 interface IBrowserState {
   [key: number]: { points?: number; visible?: boolean };
 }
 
-const NewsItemList: React.FC<Props> = ({ items }) => {
-  const [cachedItems, cacheItem] = useBrowserState('NewsItemList');
-
-  const cacheNewsItemVisibility = (id) => cacheItem(id, { visible: false });
-  const cacheNewsItemPoints = (id, points) => cacheItem(id, { points });
-
-  const getCachedPoints = (item: INewsItem): number => cachedItems[item.objectID] && cachedItems[item.objectID].points;
-  const hiddenItems = Object.keys(cachedItems).filter((id) => cachedItems[id] && cachedItems[id].visible === false);
-  const visibleItems = items.filter((item) => hiddenItems.indexOf(`${item.objectID}`) === -1);
+const NewsItemList: React.FC<Props> = ({
+  items,
+  cacheUpvotes = false,
+  cacheHidden = false,
+  showCachedHidden = true,
+  showCachedPoints = false,
+}) => {
+  const { cache, get, items: cachedItems } = React.useContext(BrowserStateNewsContext);
+  const hidden = Object.keys(cachedItems).filter((id) => get(id, 'visible') === false);
 
   return (
     <div className="NewsItemList">
-      {visibleItems.map((news, index) => (
-        <NewsItem
-          key={news.objectID}
-          id={news.objectID}
-          {...news}
-          points={getCachedPoints(news) || news.points}
-          source={news.url || ''}
-          createdAt={news.created_at}
-          commentCount={news.num_comments}
-          onHide={cacheNewsItemVisibility}
-          onUpvote={cacheNewsItemPoints}
-          alt={index % 2 !== 0}
-        />
-      ))}
+      {(showCachedHidden ? items : items.filter((item) => hidden.indexOf(`${item.objectID}`) === -1)).map(
+        (news, index) => (
+          <NewsItem
+            key={news.objectID}
+            id={news.objectID}
+            {...news}
+            points={(showCachedPoints && get(news.objectID, 'points')) || news.points}
+            source={news.url || ''}
+            createdAt={news.created_at}
+            commentCount={news.num_comments}
+            onHide={(id) => cacheHidden && cache(id, { visible: false })}
+            onUpvote={(id, points) => cacheUpvotes && cache(id, { points })}
+            alt={index % 2 !== 0}
+          />
+        )
+      )}
     </div>
   );
 };

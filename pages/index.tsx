@@ -3,6 +3,7 @@ import fetch from 'isomorphic-unfetch';
 
 import * as SITE_CONFIG from '../public/site.config.json';
 import { INewsItemFrontPageResponse } from '../interfaces/hn';
+import { BrowserStateNewsContextProvider } from '../lib/contexts/BrowserStateNewsContext';
 import Layout from '../components/layout';
 import NewsItemList from '../components/NewsItemList';
 import NewsItemPagination from '../components/NewsItemPagination';
@@ -14,7 +15,9 @@ export default ({ data }) => {
       <Header siteName={SITE_CONFIG.siteName} />
       {data && (
         <>
-          <NewsItemList items={data.hits} />
+          <BrowserStateNewsContextProvider>
+            <NewsItemList items={data.hits} cacheHidden cacheUpvotes showCachedHidden={false} showCachedPoints />
+          </BrowserStateNewsContextProvider>
           <NewsItemPagination numOfPages={data.nbPages} currPage={data.page} />
         </>
       )}
