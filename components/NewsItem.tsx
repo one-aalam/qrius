@@ -55,7 +55,7 @@ const NewsItem: React.FC<Props> = ({
 
   const handleUpvote = () => {
     setPoints((prevPoints) => prevPoints + 1);
-    onUpvote(id, points);
+    onUpvote(id, points + 1);
   };
 
   return (
