@@ -1,16 +1,7 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`renders homepage unchanged 1`] = `
-<div>
-  <h1
-    className="title"
-  >
-    Y
-  </h1>
-  <p
-    className="description"
-  >
-    HN Clone
-  </p>
-</div>
+exports[`renders footer 1`] = `
+<footer
+  className="px8 py4"
+/>
 `;
