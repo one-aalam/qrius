@@ -1,6 +1,12 @@
 # [1.3.0](https://github.com/one-aalam/qrius/compare/v1.2.0...v1.3.0) (2020-04-13)
 
+### Features
 
+- Add News specific React Context and use it ([fbae183](https://github.com/one-aalam/qrius/commit/fbae1837eb98fcf555d7e5f45056e10bee6d13e4))
+- Add a utility method to pluck domain name outta url ([1f2cce9](1f2cce97bb312fa9e06a7a65dec9fc96c1251200)) 
+- Add useBrowserState hook and cache point and visibility state ([4af5af8](4af5af8ea1819314fcb78231effc4e173783539d)) 
+- Add NewsItemList and NewsItemPagination component ([b54f26a](b54f26a77f29e990c5c645d8612e8a40a8c588f8)) 
+- Add NewsItem component ([e640008](e640008f545c68b0d3efaa3c2478b8f618f41367)) 
 
 # [1.2.0](https://github.com/one-aalam/qrius/compare/v1.1.0...v1.2.0) (2020-04-06)
 
